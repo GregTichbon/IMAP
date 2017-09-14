@@ -26,7 +26,10 @@ namespace IMAP
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            tcpc = new System.Net.Sockets.TcpClient("mail.datainn.co.nz", 993);
+            //https://code.msdn.microsoft.com/windowsdesktop/Simple-IMAP-CLIENT-b249d2e6
+            //http://www.4d.com/docs/CMU/CMU88858.HTM
+
+            tcpc = new System.Net.Sockets.TcpClient("mail.datainn.co.nz", 993); ///
 
             ssl = new System.Net.Security.SslStream(tcpc.GetStream());
             ssl.AuthenticateAsClient("imap.gmail.com");
